@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Miraculously – Five-Day Devotional | RLCC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #365233;
+    --forest-dark: #253b22;
+    --forest-deep: #1a2b18;
+    --forest-light: #4e7348;
+    --forest-pale: #6d9967;
+    --gold: #c9a84c;
+    --gold-light: #e8cc7a;
+    --cream: #fdf8f0;
+    --warm-white: #fffdf9;
+    --text-dark: #1e2b1c;
+    --text-mid: #3d4f3a;
+    --text-light: #6b7d68;
+    --shadow: rgba(30, 43, 28, 0.15);
+    --glow: rgba(201, 168, 76, 0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--forest-deep);
+    min-height: 100vh;
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* === HEADER === */
+  .page-header {
+    background: linear-gradient(160deg, var(--forest-deep) 0%, var(--forest) 50%, var(--forest-dark) 100%);
+    padding: 52px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%);
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 40px;
+    background: var(--cream);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .header-eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    opacity: 0.9;
+    position: relative;
+  }
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    position: relative;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .header-title span {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+  .header-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 12px;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  .header-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 18px auto 0;
+    position: relative;
+  }
+
+  /* === MAIN LAYOUT === */
+  .main-wrap {
+    background: var(--cream);
+    min-height: 80vh;
+    position: relative;
+  }
+
+  /* === TAB NAV === */
+  .tab-nav {
+    display: flex;
+    overflow-x: auto;
+    background: var(--warm-white);
+    border-bottom: 2px solid rgba(54,82,51,0.1);
+    padding: 0 16px;
+    gap: 4px;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    flex: 0 0 auto;
+    padding: 16px 18px 14px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    position: relative;
+    top: 2px;
+  }
+  .tab-btn:hover { color: var(--forest); }
+  .tab-btn.active {
+    color: var(--forest);
+    border-bottom-color: var(--forest);
+  }
+  .tab-btn .day-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--forest);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    margin-right: 6px;
+    transition: all 0.25s;
+  }
+  .tab-btn.active .day-num,
+  .tab-btn:hover .day-num {
+    background: var(--gold);
+    color: var(--forest-deep);
+  }
+  .tab-btn.intro-tab .day-num {
+    background: var(--gold);
+    color: var(--forest-deep);
+  }
+
+  /* === TAB PANELS === */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* === INTRO PANEL === */
+  .intro-panel {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 60px;
+  }
+  .intro-hero {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    color: #fff;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-hero::before {
+    content: '✦';
+    position: absolute;
+    right: -10px; top: -20px;
+    font-size: 140px;
+    opacity: 0.05;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .intro-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .intro-hero p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+  }
+  .intro-highlight {
+    background: rgba(201,168,76,0.15);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-style: italic;
+  }
+  .intro-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .intro-step {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px var(--shadow);
+    border-top: 3px solid var(--forest);
+    transition: transform 0.2s;
+  }
+  .intro-step:hover { transform: translateY(-3px); }
+  .step-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .intro-step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+  .intro-step p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .intro-cta {
+    text-align: center;
+    margin-top: 32px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--forest);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(54,82,51,0.3);
+  }
+  .cta-btn:hover {
+    background: var(--forest-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(54,82,51,0.4);
+  }
+
+  /* === DAY PANEL === */
+  .day-panel {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .day-badge {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--forest), var(--forest-dark));
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(54,82,51,0.3);
+  }
+  .day-badge span:first-child {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .day-badge span:last-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .day-title-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 4vw, 1.75rem);
+    font-weight: 700;
+    color: var(--forest-dark);
+    line-height: 1.25;
+  }
+  .day-theme-tag {
+    display: inline-block;
+    background: rgba(54,82,51,0.1);
+    color: var(--forest);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+  }
+
+  /* Scripture block */
+  .scripture-block {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .scripture-block::before {
+    content: '"';
+    position: absolute;
+    left: 16px; top: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: rgba(255,255,255,0.1);
+    line-height: 1;
+  }
+  .scripture-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .scripture-verse {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-style: italic;
+    line-height: 1.65;
+    color: #fff;
+    position: relative;
+  }
+  .scripture-ref {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  /* Accordion sections */
+  .section-card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px var(--shadow);
+    overflow: hidden;
+    border: 1px solid rgba(54,82,51,0.08);
+  }
+  .section-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+  }
+  .section-toggle:hover { background: rgba(54,82,51,0.04); }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex: 0 0 auto;
+  }
+  .section-toggle .section-label {
+    flex: 1;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--forest-dark);
+  }
+  .section-arrow {
+    font-size: 12px;
+    color: var(--forest-pale);
+    transition: transform 0.3s ease;
+  }
+  .section-card.open .section-arrow { transform: rotate(180deg); }
+  .section-body {
+    display: none;
+    padding: 0 20px 20px;
+    animation: fadeSlide 0.3s ease;
+  }
+  .section-card.open .section-body { display: block; }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section-body p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-mid);
+  }
+
+  /* Explanation color */
+  .icon-explanation { background: rgba(54,82,51,0.1); }
+  /* Reflection color */
+  .icon-reflection { background: rgba(201,168,76,0.15); }
+  /* Questions color */
+  .icon-questions { background: rgba(78,115,72,0.12); }
+  /* Application color */
+  .icon-application { background: rgba(44,62,44,0.12); }
+
+  /* Discussion questions list */
+  .questions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .questions-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(54,82,51,0.08);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+  .questions-list li:last-child { border-bottom: none; }
+  .q-num {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    background: var(--forest);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  /* Application highlight */
+  .application-box {
+    background: linear-gradient(135deg, rgba(54,82,51,0.07), rgba(54,82,51,0.03));
+    border: 1px solid rgba(54,82,51,0.15);
+    border-left: 4px solid var(--forest);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 18px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  /* === JOURNAL / EMAIL SECTION === */
+  .journal-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin-top: 24px;
+    box-shadow: 0 2px 12px var(--shadow);
+    border: 1px solid rgba(54,82,51,0.1);
+  }
+  .journal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .journal-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--forest-dark);
+  }
+  .journal-icon {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .journal-textarea {
+    width: 100%;
+    min-height: 130px;
+    border: 1.5px solid rgba(54,82,51,0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-mid);
+    resize: vertical;
+    transition: border-color 0.2s;
+    background: var(--cream);
+    line-height: 1.7;
+  }
+  .journal-textarea:focus {
+    outline: none;
+    border-color: var(--forest);
+    background: #fff;
+  }
+  .journal-textarea::placeholder {
+    color: rgba(107,125,104,0.55);
+    font-style: italic;
+  }
+  .journal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    background: var(--forest);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .btn-email:hover { background: var(--forest-dark); transform: translateY(-1px); }
+  .btn-clear {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    background: transparent;
+    color: var(--text-light);
+    border: 1.5px solid rgba(54,82,51,0.2);
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-clear:hover { border-color: var(--forest); color: var(--forest); }
+  .char-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-light);
+    align-self: center;
+    font-style: italic;
+  }
+
+  /* === EMAIL MODAL === */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,32,18,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(3px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--warm-white);
+    border-radius: 20px;
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    animation: modalIn 0.3s ease;
+    position: relative;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .modal-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--forest-dark);
+    margin-bottom: 6px;
+  }
+  .modal-box .modal-sub {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .modal-field { margin-bottom: 16px; }
+  .modal-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+  .modal-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid rgba(54,82,51,0.2);
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-mid);
+    background: #fff;
+    transition: border-color 0.2s;
+  }
+  .modal-input:focus { outline: none; border-color: var(--forest); }
+  .modal-preview {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-height: 100px;
+    overflow-y: auto;
+    border: 1px solid rgba(54,82,51,0.1);
+    font-style: italic;
+    margin-top: 6px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .modal-send {
+    flex: 1;
+    padding: 13px;
+    background: var(--forest);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .modal-send:hover { background: var(--forest-dark); }
+  .modal-cancel {
+    padding: 13px 22px;
+    background: transparent;
+    border: 1.5px solid rgba(54,82,51,0.25);
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .modal-cancel:hover { border-color: var(--forest); color: var(--forest); }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text-light);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--forest); }
+
+  /* Success toast */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--forest-dark);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 2000;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* Progress indicator */
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 24px 0;
+    background: var(--cream);
+  }
+  .progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(54,82,51,0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .progress-dot.done { background: var(--forest-pale); }
+  .progress-dot.active {
+    background: var(--forest);
+    width: 28px;
+    border-radius: 5px;
+  }
+  .progress-line {
+    flex: 1;
+    max-width: 30px;
+    height: 1px;
+    background: rgba(54,82,51,0.15);
+  }
+
+  /* Footer */
+  .page-footer {
+    background: var(--forest-deep);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+  .page-footer a { color: var(--gold-light); text-decoration: none; }
+  .page-footer strong { color: rgba(255,255,255,0.8); }
+
+  /* Responsive */
+  @media (max-width: 520px) {
+    .day-header { flex-direction: column; gap: 12px; }
+    .modal-box { padding: 28px 20px; }
+    .scripture-block { padding: 22px 22px; }
+    .journal-actions { flex-direction: column; }
+    .char-count { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="header-eyebrow">Real Life Christian Communities · RLCC</div>
+  <h1 class="header-title"><span>Living</span> Miraculously</h1>
+  <p class="header-sub">A Five-Day Personal Devotional</p>
+  <div class="header-divider"></div>
+</header>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar">
+  <div class="progress-dot active" onclick="switchTab('intro')" title="Introduction"></div>
+  <div class="progress-line"></div>
+  <div class="progress-dot" onclick="switchTab('day1')" title="Day 1"></div>
+  <div class="progress-line"></div>
+  <div class="progress-dot" onclick="switchTab('day2')" title="Day 2"></div>
+  <div class="progress-line"></div>
+  <div class="progress-dot" onclick="switchTab('day3')" title="Day 3"></div>
+  <div class="progress-line"></div>
+  <div class="progress-dot" onclick="switchTab('day4')" title="Day 4"></div>
+  <div class="progress-line"></div>
+  <div class="progress-dot" onclick="switchTab('day5')" title="Day 5"></div>
+</div>
+
+<!-- TAB NAV -->
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn intro-tab active" onclick="switchTab('intro')">
+    <span class="day-num">✦</span> How to Use
+  </button>
+  <button class="tab-btn" onclick="switchTab('day1')">
+    <span class="day-num">1</span> Draw Near
+  </button>
+  <button class="tab-btn" onclick="switchTab('day2')">
+    <span class="day-num">2</span> Let Go
+  </button>
+  <button class="tab-btn" onclick="switchTab('day3')">
+    <span class="day-num">3</span> Go Deeper
+  </button>
+  <button class="tab-btn" onclick="switchTab('day4')">
+    <span class="day-num">4</span> Step Out
+  </button>
+  <button class="tab-btn" onclick="switchTab('day5')">
+    <span class="day-num">5</span> Keep Trusting
+  </button>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+
+  <!-- ===== INTRO TAB ===== -->
+  <div id="tab-intro" class="tab-content active">
+    <div class="intro-panel">
+      <div class="intro-hero">
+        <h2>Welcome to This Devotional Journey</h2>
+        <p>These five days of devotionals are drawn from the sermon <em>"Living Miraculously."</em> They are designed to help you move beyond simply hearing God's Word on Sunday — into a deeper, daily encounter with Him. Each day invites you to slow down, open your heart, and respond to what God is saying to you personally.</p>
+      </div>
+
+      <div class="intro-highlight">
+        "The early church did not just believe in miracles — they lived in the constant awareness of God's presence. This devotional invites you into that same reality."
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--forest-dark); margin-bottom:16px;">How to Use These Devotionals</h3>
+
+      <div class="intro-steps">
+        <div class="intro-step">
+          <span class="step-icon">🕐</span>
+          <h4>Set Aside Time</h4>
+          <p>Find 15–20 quiet minutes each day. Morning is ideal, but anytime works — what matters is a focused, unhurried heart.</p>
+        </div>
+        <div class="intro-step">
+          <span class="step-icon">📖</span>
+          <h4>Read Slowly</h4>
+          <p>Begin with the Scripture. Read it more than once. Let the words settle before moving on to the explanation and reflection.</p>
+        </div>
+        <div class="intro-step">
+          <span class="step-icon">🙏</span>
+          <h4>Pray First</h4>
+          <p>Before diving in, ask the Holy Spirit to speak to you. Approach each day with openness and expectation.</p>
+        </div>
+        <div class="intro-step">
+          <span class="step-icon">✍️</span>
+          <h4>Journal Your Thoughts</h4>
+          <p>Use the journaling space provided. Writing helps you process what God is saying and deepens your personal reflection.</p>
+        </div>
+        <div class="intro-step">
+          <span class="step-icon">💬</span>
+          <h4>Discuss with Others</h4>
+          <p>The discussion questions are great for sharing with your LIFE Group or a trusted friend. Faith grows in community.</p>
+        </div>
+        <div class="intro-step">
+          <span class="step-icon">📧</span>
+          <h4>Share Your Reflections</h4>
+          <p>You can email your journal notes to yourself for keepsake, or share them with someone who might be encouraged by your thoughts.</p>
+        </div>
+      </div>
+
+      <div class="intro-highlight">
+        <strong style="color:var(--forest);">A Note on the Podcast Line:</strong> At the end of each day, you'll find a reminder to listen to or share the RLCC Daily Devotions podcast. This is a great companion as you go through your day.
+      </div>
+
+      <div class="intro-cta">
+        <button class="cta-btn" onclick="switchTab('day1')">Begin Day 1 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DAY 1 ===== -->
+  <div id="tab-day1" class="tab-content">
+    <div class="day-panel">
+      <div class="day-header">
+        <div class="day-badge"><span>DAY</span><span>1</span></div>
+        <div class="day-title-block">
+          <h2>When Your Faith Feels Dry and Distant</h2>
+          <span class="day-theme-tag">Drawing Near</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <div class="scripture-label">Today's Scripture</div>
+        <div class="scripture-verse">"Draw near to God, and he will draw near to you."</div>
+        <div class="scripture-ref">— James 4:8</div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-explanation">📜</div>
+          <span class="section-label">Explanation</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>This verse gives you a simple but profound invitation: come near to God. It doesn't begin with what God must do for you — it begins with <em>your</em> response to Him. The early church experienced awe and miracles not because they chased experiences, but because they drew near to Jesus. When you prioritize His presence over His gifts, something shifts in your heart. You begin to recognize that God Himself is the reward. And as you draw near, you become more aware of His activity in your life.</p>
+        </div>
+      </div>
+
+      <div class="section-card open">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-reflection">💛</div>
+          <span class="section-label">Personal Reflection</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>You may feel like your spiritual life has become routine or distant. Maybe you've settled for knowing <em>about</em> God instead of truly walking <em>with</em> Him. The truth is, Jesus is not far from you — you may just not be pursuing Him intentionally. What if your dryness is actually an invitation? What if God is calling you deeper, not just to receive something, but to know Him more?</p>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-questions">❓</div>
+          <span class="section-label">Discussion Questions</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <ul class="questions-list">
+            <li><span class="q-num">1</span><span>What usually draws your attention more — Jesus Himself or what He can do for you?</span></li>
+            <li><span class="q-num">2</span><span>What habits are helping or hindering your closeness with God?</span></li>
+            <li><span class="q-num">3</span><span>When was the last time you truly felt near to God?</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-application">✅</div>
+          <span class="section-label">Practical Application</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <div class="application-box">Set aside 10–15 minutes today to simply be with Jesus — no agenda, no requests. Just worship, listen, and draw near.</div>
+        </div>
+      </div>
+
+      <div class="journal-section">
+        <div class="journal-header">
+          <div class="journal-icon">✍️</div>
+          <h3>My Reflection Journal</h3>
+        </div>
+        <textarea class="journal-textarea" id="journal-day1" placeholder="Write your personal thoughts, prayers, or what God is saying to you today…" oninput="updateCharCount('day1')"></textarea>
+        <div class="journal-actions">
+          <button class="btn-email" onclick="openEmailModal('day1')">📧 Send My Reflections</button>
+          <button class="btn-clear" onclick="clearJournal('day1')">✕ Clear</button>
+          <span class="char-count" id="char-day1">0 characters</span>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:13px; color:var(--text-light); text-align:center; font-style:italic; border-top:1px solid rgba(54,82,51,0.1); padding-top:18px;">
+        🎙 Subscribe and listen to <strong style="color:var(--forest);">RLCC Daily Devotions</strong> — available on Spotify, Apple Podcasts, and all major platforms.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 2 ===== -->
+  <div id="tab-day2" class="tab-content">
+    <div class="day-panel">
+      <div class="day-header">
+        <div class="day-badge"><span>DAY</span><span>2</span></div>
+        <div class="day-title-block">
+          <h2>When You're Afraid to Let Go of Control</h2>
+          <span class="day-theme-tag">Surrendering</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <div class="scripture-label">Today's Scripture</div>
+        <div class="scripture-verse">"Trust in the Lord with all your heart, and do not lean on your own understanding."</div>
+        <div class="scripture-ref">— Proverbs 3:5</div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-explanation">📜</div>
+          <span class="section-label">Explanation</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>Trusting God means releasing your need to control outcomes. The early believers experienced awe because they recognized that what was happening among them was beyond human ability. That kind of life requires surrender. When you insist on controlling everything, you limit your openness to what God wants to do. But when you trust Him fully, even when things feel uncertain, you position yourself to experience His power. Surrender is not weakness — it is faith expressed in dependence.</p>
+        </div>
+      </div>
+
+      <div class="section-card open">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-reflection">💛</div>
+          <span class="section-label">Personal Reflection</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>You may be holding on tightly to something right now — your plans, your reputation, your safety. You might fear disappointment or failure if you step out. But beneath that fear is a deeper question: do you trust God enough to surrender? The life of faith will always involve risk, but it is never without God's presence. What you are afraid to release may be the very place where God wants to move.</p>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-questions">❓</div>
+          <span class="section-label">Discussion Questions</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <ul class="questions-list">
+            <li><span class="q-num">1</span><span>What areas of your life are hardest for you to surrender to God?</span></li>
+            <li><span class="q-num">2</span><span>What fears keep you from fully trusting Him?</span></li>
+            <li><span class="q-num">3</span><span>How do you usually respond when things feel uncertain?</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-application">✅</div>
+          <span class="section-label">Practical Application</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <div class="application-box">Identify one area where you are trying to stay in control. Pray and intentionally surrender it to God today, trusting Him with the outcome.</div>
+        </div>
+      </div>
+
+      <div class="journal-section">
+        <div class="journal-header">
+          <div class="journal-icon">✍️</div>
+          <h3>My Reflection Journal</h3>
+        </div>
+        <textarea class="journal-textarea" id="journal-day2" placeholder="Write your personal thoughts, prayers, or what God is saying to you today…" oninput="updateCharCount('day2')"></textarea>
+        <div class="journal-actions">
+          <button class="btn-email" onclick="openEmailModal('day2')">📧 Send My Reflections</button>
+          <button class="btn-clear" onclick="clearJournal('day2')">✕ Clear</button>
+          <span class="char-count" id="char-day2">0 characters</span>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:13px; color:var(--text-light); text-align:center; font-style:italic; border-top:1px solid rgba(54,82,51,0.1); padding-top:18px;">
+        🎙 Subscribe and listen to <strong style="color:var(--forest);">RLCC Daily Devotions</strong> — available on Spotify, Apple Podcasts, and all major platforms.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 3 ===== -->
+  <div id="tab-day3" class="tab-content">
+    <div class="day-panel">
+      <div class="day-header">
+        <div class="day-badge"><span>DAY</span><span>3</span></div>
+        <div class="day-title-block">
+          <h2>When You Want to Experience God More Deeply</h2>
+          <span class="day-theme-tag">Reverence &amp; Awe</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <div class="scripture-label">Today's Scripture</div>
+        <div class="scripture-verse">"Serve the Lord with fear, and rejoice with trembling."</div>
+        <div class="scripture-ref">— Psalm 2:11</div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-explanation">📜</div>
+          <span class="section-label">Explanation</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>This verse captures the balance of joy and reverence. The "awe" in Acts 2:43 reflects this kind of response — a deep awareness of God's holiness and presence. When you encounter God, it is not casual; it is transformative. The early church lived with a sense that God was truly among them. That awareness shaped how they worshiped, prayed, and lived. When reverence is restored, your faith moves from routine to reality.</p>
+        </div>
+      </div>
+
+      <div class="section-card open">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-reflection">💛</div>
+          <span class="section-label">Personal Reflection</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>You may have become too familiar with spiritual things. Worship can feel ordinary, prayer predictable, and Scripture routine. But God has not changed — He is still holy, powerful, and present. The question is whether your heart is still responsive to Him. Are you approaching God with awe, or just going through the motions? When you recover reverence, you begin to experience Him more deeply.</p>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-questions">❓</div>
+          <span class="section-label">Discussion Questions</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <ul class="questions-list">
+            <li><span class="q-num">1</span><span>What does "awe" or reverence toward God look like in your life?</span></li>
+            <li><span class="q-num">2</span><span>Have you become too comfortable or casual in your relationship with God?</span></li>
+            <li><span class="q-num">3</span><span>What helps you become more aware of God's presence?</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-application">✅</div>
+          <span class="section-label">Practical Application</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <div class="application-box">During your next time of worship or prayer, slow down. Focus intentionally on <em>who God is</em>, not just what you need.</div>
+        </div>
+      </div>
+
+      <div class="journal-section">
+        <div class="journal-header">
+          <div class="journal-icon">✍️</div>
+          <h3>My Reflection Journal</h3>
+        </div>
+        <textarea class="journal-textarea" id="journal-day3" placeholder="Write your personal thoughts, prayers, or what God is saying to you today…" oninput="updateCharCount('day3')"></textarea>
+        <div class="journal-actions">
+          <button class="btn-email" onclick="openEmailModal('day3')">📧 Send My Reflections</button>
+          <button class="btn-clear" onclick="clearJournal('day3')">✕ Clear</button>
+          <span class="char-count" id="char-day3">0 characters</span>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:13px; color:var(--text-light); text-align:center; font-style:italic; border-top:1px solid rgba(54,82,51,0.1); padding-top:18px;">
+        🎙 Subscribe and listen to <strong style="color:var(--forest);">RLCC Daily Devotions</strong> — available on Spotify, Apple Podcasts, and all major platforms.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 4 ===== -->
+  <div id="tab-day4" class="tab-content">
+    <div class="day-panel">
+      <div class="day-header">
+        <div class="day-badge"><span>DAY</span><span>4</span></div>
+        <div class="day-title-block">
+          <h2>When You Don't Know How to Step Out in Faith</h2>
+          <span class="day-theme-tag">Being Led by the Spirit</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <div class="scripture-label">Today's Scripture</div>
+        <div class="scripture-verse">"For all who are led by the Spirit of God are sons of God."</div>
+        <div class="scripture-ref">— Romans 8:14</div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-explanation">📜</div>
+          <span class="section-label">Explanation</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>Living by faith is not about guessing — it is about being led. The apostles didn't act randomly; they responded to the Spirit's prompting. Being led by the Spirit means you learn to recognize His voice and follow His direction. This requires attentiveness, sensitivity, and willingness to obey. As you grow in this, your faith becomes more active and responsive. You begin to see that God is already at work, and He invites you to participate.</p>
+        </div>
+      </div>
+
+      <div class="section-card open">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-reflection">💛</div>
+          <span class="section-label">Personal Reflection</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>You may feel unsure about how to act in faith. You might be waiting for certainty before you move. But often, God leads through quiet promptings rather than dramatic signs. Are you paying attention to His voice? Or are you too distracted or hesitant to respond? Faith grows when you take small steps of obedience.</p>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-questions">❓</div>
+          <span class="section-label">Discussion Questions</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <ul class="questions-list">
+            <li><span class="q-num">1</span><span>How do you usually recognize God's leading in your life?</span></li>
+            <li><span class="q-num">2</span><span>What makes it difficult for you to follow the Spirit's prompting?</span></li>
+            <li><span class="q-num">3</span><span>Can you recall a time when you sensed God leading you to act?</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-application">✅</div>
+          <span class="section-label">Practical Application</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <div class="application-box">Today, pay attention to any prompting from the Holy Spirit — no matter how small — and act on it in obedience.</div>
+        </div>
+      </div>
+
+      <div class="journal-section">
+        <div class="journal-header">
+          <div class="journal-icon">✍️</div>
+          <h3>My Reflection Journal</h3>
+        </div>
+        <textarea class="journal-textarea" id="journal-day4" placeholder="Write your personal thoughts, prayers, or what God is saying to you today…" oninput="updateCharCount('day4')"></textarea>
+        <div class="journal-actions">
+          <button class="btn-email" onclick="openEmailModal('day4')">📧 Send My Reflections</button>
+          <button class="btn-clear" onclick="clearJournal('day4')">✕ Clear</button>
+          <span class="char-count" id="char-day4">0 characters</span>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:13px; color:var(--text-light); text-align:center; font-style:italic; border-top:1px solid rgba(54,82,51,0.1); padding-top:18px;">
+        🎙 Subscribe and listen to <strong style="color:var(--forest);">RLCC Daily Devotions</strong> — available on Spotify, Apple Podcasts, and all major platforms.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 5 ===== -->
+  <div id="tab-day5" class="tab-content">
+    <div class="day-panel">
+      <div class="day-header">
+        <div class="day-badge"><span>DAY</span><span>5</span></div>
+        <div class="day-title-block">
+          <h2>When You Feel Like Nothing Is Happening</h2>
+          <span class="day-theme-tag">Faithful Waiting</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <div class="scripture-label">Today's Scripture</div>
+        <div class="scripture-verse">"Now to him who is able to do far more abundantly than all that we ask or think…"</div>
+        <div class="scripture-ref">— Ephesians 3:20</div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-explanation">📜</div>
+          <span class="section-label">Explanation</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>God is always at work, even when you don't see immediate results. The miracles in Acts were described as something that "was happening" — an ongoing work of God. This reminds you that God's activity is not always instant or visible. Sometimes He is preparing, shaping, and working behind the scenes. Your role is not to force results but to remain faithful. Over time, you begin to see that God has been at work all along.</p>
+        </div>
+      </div>
+
+      <div class="section-card open">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-reflection">💛</div>
+          <span class="section-label">Personal Reflection</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <p>You may feel discouraged because nothing seems to be happening in your life or prayers. You may wonder if God is really moving. But what if He is working in ways you cannot yet see? What if your faith is being formed in the waiting? Don't let what you don't see cause you to miss what God is doing.</p>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-questions">❓</div>
+          <span class="section-label">Discussion Questions</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <ul class="questions-list">
+            <li><span class="q-num">1</span><span>When do you feel most discouraged in your faith?</span></li>
+            <li><span class="q-num">2</span><span>How do you respond when prayers seem unanswered?</span></li>
+            <li><span class="q-num">3</span><span>What helps you continue trusting God in the waiting?</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <button class="section-toggle" onclick="toggleSection(this)">
+          <div class="section-icon icon-application">✅</div>
+          <span class="section-label">Practical Application</span>
+          <span class="section-arrow">▼</span>
+        </button>
+        <div class="section-body">
+          <div class="application-box">Write down one area where you feel nothing is happening. Pray over it and choose to trust God's unseen work this week.</div>
+        </div>
+      </div>
+
+      <div class="journal-section">
+        <div class="journal-header">
+          <div class="journal-icon">✍️</div>
+          <h3>My Reflection Journal</h3>
+        </div>
+        <textarea class="journal-textarea" id="journal-day5" placeholder="Write your personal thoughts, prayers, or what God is saying to you today…" oninput="updateCharCount('day5')"></textarea>
+        <div class="journal-actions">
+          <button class="btn-email" onclick="openEmailModal('day5')">📧 Send My Reflections</button>
+          <button class="btn-clear" onclick="clearJournal('day5')">✕ Clear</button>
+          <span class="char-count" id="char-day5">0 characters</span>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:13px; color:var(--text-light); text-align:center; font-style:italic; border-top:1px solid rgba(54,82,51,0.1); padding-top:18px;">
+        🎙 Subscribe and listen to <strong style="color:var(--forest);">RLCC Daily Devotions</strong> — available on Spotify, Apple Podcasts, and all major platforms.
+      </p>
+    </div>
+  </div>
+
+</div><!-- end main-wrap -->
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div><strong>Real Life Christian Communities (RLCC)</strong></div>
+  <div>Esperanza Building (Hope Center), 233 Pacita Avenue, Pacita Complex, San Vicente, San Pedro, Laguna</div>
+  <div style="margin-top:6px;"><a href="https://rlcc.ph">rlcc.ph</a> &nbsp;·&nbsp; Sunday Worship: 9 AM (Filipino) &amp; 11 AM (Taglish)</div>
+</footer>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="emailModal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeEmailModal()">✕</button>
+    <h3>Send My Reflections</h3>
+    <p class="modal-sub">Send your journal notes to yourself or share them with a friend or prayer partner.</p>
+
+    <div class="modal-field">
+      <label class="modal-label" for="emailTo">Send to (email address)</label>
+      <input type="email" class="modal-input" id="emailTo" placeholder="you@example.com">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label" for="emailName">Your Name (optional)</label>
+      <input type="text" class="modal-input" id="emailName" placeholder="e.g., Juan dela Cruz">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">Your Reflection</label>
+      <div class="modal-preview" id="modalPreview"></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="modal-send" onclick="sendEmail()">Send via Email App</button>
+      <button class="modal-cancel" onclick="closeEmailModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Email draft opened!</div>
+
+<script>
+  var currentDay = null;
+
+  var dayTitles = {
+    day1: 'Day 1 – When Your Faith Feels Dry and Distant',
+    day2: 'Day 2 – When You\'re Afraid to Let Go of Control',
+    day3: 'Day 3 – When You Want to Experience God More Deeply',
+    day4: 'Day 4 – When You Don\'t Know How to Step Out in Faith',
+    day5: 'Day 5 – When You Feel Like Nothing Is Happening'
+  };
+
+  var tabOrder = ['intro','day1','day2','day3','day4','day5'];
+
+  function switchTab(tabId) {
+    // Hide all
+    document.querySelectorAll('.tab-content').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    // Remove active from all buttons
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    // Show target
+    document.getElementById('tab-' + tabId).classList.add('active');
+    // Activate button
+    var btns = document.querySelectorAll('.tab-btn');
+    var idx = tabOrder.indexOf(tabId);
+    if (btns[idx]) btns[idx].classList.add('active');
+    // Update progress dots
+    var dots = document.querySelectorAll('.progress-dot');
+    dots.forEach(function(d, i) {
+      d.classList.remove('active','done');
+      if (i < idx) d.classList.add('done');
+      if (i === idx) d.classList.add('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleSection(btn) {
+    var card = btn.parentElement;
+    card.classList.toggle('open');
+  }
+
+  function updateCharCount(day) {
+    var ta = document.getElementById('journal-' + day);
+    var el = document.getElementById('char-' + day);
+    if (ta && el) el.textContent = ta.value.length + ' characters';
+  }
+
+  function clearJournal(day) {
+    var ta = document.getElementById('journal-' + day);
+    if (ta) { ta.value = ''; updateCharCount(day); }
+  }
+
+  function openEmailModal(day) {
+    currentDay = day;
+    var ta = document.getElementById('journal-' + day);
+    var preview = document.getElementById('modalPreview');
+    var text = ta ? ta.value.trim() : '';
+    if (!text) {
+      preview.textContent = '(No journal entry yet — add your reflections above first.)';
+    } else {
+      preview.textContent = text.length > 280 ? text.substring(0, 280) + '…' : text;
+    }
+    document.getElementById('emailModal').classList.add('open');
+  }
+
+  function closeEmailModal() {
+    document.getElementById('emailModal').classList.remove('open');
+    currentDay = null;
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('emailModal')) closeEmailModal();
+  }
+
+  function sendEmail() {
+    var to = document.getElementById('emailTo').value.trim();
+    var name = document.getElementById('emailName').value.trim();
+    var ta = currentDay ? document.getElementById('journal-' + currentDay) : null;
+    var reflection = ta ? ta.value.trim() : '';
+    var title = currentDay ? dayTitles[currentDay] : 'My Devotional Reflection';
+
+    var subject = encodeURIComponent('Living Miraculously Devotional – ' + title);
+    var greeting = name ? 'From ' + name + ':\n\n' : '';
+    var body = encodeURIComponent(
+      'Living Miraculously – Five-Day Devotional\n' +
+      'Real Life Christian Communities (RLCC) | rlcc.ph\n' +
+      '─────────────────────────────\n' +
+      title + '\n' +
+      '─────────────────────────────\n\n' +
+      greeting +
+      (reflection || '(No reflection written yet.)') +
+      '\n\n─────────────────────────────\n' +
+      'Shared via the RLCC "Living Miraculously" devotional.\n' +
+      'Subscribe to RLCC Daily Devotions on Spotify, Apple Podcasts, and all major platforms.'
+    );
+
+    var mailto = 'mailto:' + (to || '') + '?subject=' + subject + '&body=' + body;
+    window.location.href = mailto;
+    closeEmailModal();
+    showToast();
+  }
+
+  function showToast() {
+    var t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 3000);
+  }
+</script>
+</body>
+</html>
