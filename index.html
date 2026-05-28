@@ -1,1042 +1,1131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Living in Community — 5-Day Devotional | RLCC</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living with Impact — 5-Day Devotional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --forest: #365233;
-    --forest-dark: #243820;
-    --forest-mid: #4a6e46;
-    --forest-light: #6a9e64;
+    --forest-dark: #243822;
+    --forest-deep: #1a2a18;
+    --forest-light: #4a7045;
+    --forest-pale: #5a8a55;
     --gold: #c9a84c;
-    --gold-light: #e8c97a;
-    --parchment: #f9f3e6;
-    --parchment-dark: #ede4ce;
-    --cream: #fdfaf3;
-    --text-dark: #1e2b1d;
-    --text-mid: #3a4f39;
+    --gold-light: #e0c070;
+    --cream: #f5f0e8;
+    --parchment: #ede6d6;
+    --text-light: #f0ede6;
+    --text-muted: #c8c0b0;
     --white: #ffffff;
-    --shadow: 0 4px 24px rgba(54,82,51,0.18);
-    --radius: 14px;
+    --shadow: rgba(0,0,0,0.35);
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: var(--forest-dark);
-    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    background: var(--forest-deep);
+    color: var(--text-light);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
-  /* ── HERO HEADER ── */
-  .hero {
-    background: linear-gradient(160deg, var(--forest-dark) 0%, var(--forest) 55%, var(--forest-mid) 100%);
-    padding: 56px 24px 48px;
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(160deg, var(--forest-dark) 0%, var(--forest) 60%, var(--forest-light) 100%);
+    padding: 2.5rem 1.5rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
+  header::before {
     content: '';
-    position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
     pointer-events: none;
   }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(201,168,76,0.18);
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 6px 18px;
-    border-radius: 40px;
-    margin-bottom: 18px;
+  .header-cross {
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
   }
-  .hero h1 {
+  header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 3.4rem);
-    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     color: var(--white);
+    font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 12px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
   }
-  .hero h1 span { color: var(--gold-light); font-style: italic; }
-  .hero p {
-    font-family: 'Lora', serif;
-    font-size: clamp(0.95rem, 2.5vw, 1.12rem);
-    color: rgba(255,255,255,0.72);
-    max-width: 520px;
-    margin: 0 auto 8px;
-    line-height: 1.6;
+  header .subtitle {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    color: var(--gold-light);
+    font-style: italic;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+    font-family: 'Playfair Display', serif;
   }
-  .hero-divider {
-    width: 60px; height: 3px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    margin: 20px auto 0;
-    border-radius: 2px;
+  .header-rule {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1rem auto 0;
   }
 
-  /* ── TAB BAR ── */
-  .tab-bar-wrap {
+  /* ── TAB NAV ── */
+  .tab-wrapper {
     background: var(--forest-dark);
-    position: sticky; top: 0; z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-  }
-  .tab-bar {
-    display: flex;
+    border-bottom: 2px solid rgba(201,168,76,0.25);
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    max-width: 860px;
-    margin: 0 auto;
     scrollbar-width: none;
   }
-  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-wrapper::-webkit-scrollbar { display: none; }
+
+  .tabs {
+    display: flex;
+    min-width: max-content;
+    padding: 0 0.5rem;
+  }
   .tab-btn {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
     background: none;
     border: none;
-    color: rgba(255,255,255,0.5);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 15px 20px 13px;
+    color: var(--text-muted);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1rem 1.2rem 0.85rem;
     cursor: pointer;
-    white-space: nowrap;
-    position: relative;
-    transition: color 0.2s;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    position: relative;
   }
   .tab-btn:hover { color: var(--gold-light); }
   .tab-btn.active {
-    color: var(--gold-light);
+    color: var(--gold);
     border-bottom-color: var(--gold);
   }
+  .tab-btn .day-num {
+    display: block;
+    font-size: 0.65rem;
+    opacity: 0.75;
+    font-weight: 400;
+    margin-bottom: 1px;
+  }
 
-  /* ── MAIN CONTENT ── */
-  .main { max-width: 860px; margin: 0 auto; padding: 32px 16px 60px; }
+  /* ── CONTENT PANELS ── */
+  .panels { padding: 2rem 1rem 3rem; max-width: 860px; margin: 0 auto; }
 
-  /* ── PANELS ── */
-  .panel { display: none; animation: fadeUp 0.35s ease; }
+  .panel { display: none; animation: fadeUp 0.4s ease forwards; }
   .panel.active { display: block; }
+
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
   /* ── INTRO PANEL ── */
-  .intro-card {
-    background: var(--white);
-    border-radius: var(--radius);
+  .intro-hero {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow);
   }
-  .intro-header {
-    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
-    padding: 36px 32px 28px;
-  }
-  .intro-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-  .intro-header p {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .intro-body { padding: 32px; }
-  .intro-body p {
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    line-height: 1.85;
-    color: var(--text-mid);
-    margin-bottom: 16px;
-  }
-  .intro-steps { list-style: none; margin: 24px 0; }
-  .intro-steps li {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 18px;
-  }
-  .step-num {
-    flex-shrink: 0;
-    width: 34px; height: 34px;
+  .intro-hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
     border-radius: 50%;
-    background: var(--forest);
+  }
+  .intro-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .intro-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
     color: var(--white);
-    font-weight: 700;
-    font-size: 14px;
-    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.75rem;
   }
-  .step-text {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.97rem;
-    line-height: 1.65;
-    color: var(--text-dark);
-    padding-top: 6px;
-  }
-  .step-text strong { color: var(--forest); }
-  .intro-note {
-    background: linear-gradient(135deg, #f0f8ee, #e8f5e6);
-    border-left: 4px solid var(--forest);
-    border-radius: 0 8px 8px 0;
-    padding: 16px 20px;
-    margin-top: 8px;
-  }
-  .intro-note p {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.92rem;
-    color: var(--forest-dark);
-    margin: 0;
-    line-height: 1.6;
-  }
-  .start-btn {
-    display: inline-block;
-    margin-top: 28px;
-    background: var(--forest);
-    color: var(--white);
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 600;
+  .intro-hero p {
+    color: var(--cream);
+    line-height: 1.75;
     font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    padding: 13px 28px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    text-decoration: none;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  .start-btn:hover { background: var(--forest-mid); transform: translateY(-1px); }
 
-  /* ── DAY PANEL ── */
-  .day-label {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .guide-card {
+    background: rgba(54,82,51,0.5);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.4rem 1.2rem;
+    border-left: 4px solid var(--gold);
+  }
+  .guide-card .gc-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+  .guide-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+  .guide-card p { font-size: 0.87rem; color: var(--cream); line-height: 1.6; }
+
+  .intro-verse {
+    background: var(--forest-dark);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 1.2rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.7;
+  }
+  .intro-verse cite {
+    display: block;
+    font-style: normal;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
     color: var(--gold);
-    margin-bottom: 6px;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── DAY PANELS ── */
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .day-badge {
+    background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%);
+    color: var(--forest-deep);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    white-space: nowrap;
   }
   .day-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
     color: var(--white);
-    margin-bottom: 28px;
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
-  /* section cards */
-  .section-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  }
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 22px;
-    cursor: pointer;
-    user-select: none;
-    background: var(--white);
-    transition: background 0.15s;
-  }
-  .section-header:hover { background: #f7faf6; }
-  .section-header-left { display: flex; align-items: center; gap: 12px; }
-  .section-icon {
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 17px;
-    flex-shrink: 0;
-  }
-  .icon-scripture { background: linear-gradient(135deg, #e8f5e6, #c8e6c4); }
-  .icon-explanation { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
-  .icon-reflection { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
-  .icon-application { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
-  .icon-discussion { background: linear-gradient(135deg, #ede7f6, #d1c4e9); }
-
-  .section-label {
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--forest-dark);
-  }
-  .chevron {
-    color: var(--forest);
-    font-size: 18px;
-    transition: transform 0.25s;
-    line-height: 1;
-  }
-  .section-header.open .chevron { transform: rotate(180deg); }
-  .section-body {
-    display: none;
-    padding: 0 22px 22px;
-  }
-  .section-body.open { display: block; }
-
-  /* scripture block */
   .scripture-block {
-    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
-    border-radius: 10px;
-    padding: 22px 24px;
-    margin-top: 6px;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    border: 1px solid rgba(201,168,76,0.35);
+    border-left: 5px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .scripture-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
   }
   .scripture-text {
     font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     font-style: italic;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--white);
     line-height: 1.7;
-    margin-bottom: 10px;
   }
   .scripture-ref {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.78rem;
     color: var(--gold-light);
-    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 
-  /* body text */
-  .body-text {
-    font-family: 'Lora', serif;
-    font-size: 0.97rem;
-    line-height: 1.85;
-    color: var(--text-mid);
+  .section-card {
+    background: rgba(30,46,28,0.7);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1rem;
   }
-  .body-text p { margin-bottom: 12px; }
-  .body-text p:last-child { margin-bottom: 0; }
-
-  /* reflection textarea */
-  .reflection-area {
-    width: 100%;
-    min-height: 130px;
-    border: 2px solid #d0e8cc;
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-family: 'Lora', serif;
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    background: #f7fdf6;
-    resize: vertical;
-    transition: border-color 0.2s;
-    margin-top: 8px;
-  }
-  .reflection-area:focus { outline: none; border-color: var(--forest); }
-  .reflection-prompt {
-    font-family: 'Lora', serif;
-    font-style: italic;
+  .section-card h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 1rem;
-    color: var(--text-mid);
-    line-height: 1.7;
-    margin-bottom: 12px;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .section-card h3 .s-icon { font-size: 1.1rem; }
+  .section-card p, .section-card li {
+    font-size: 0.93rem;
+    color: var(--cream);
+    line-height: 1.75;
+  }
+  .section-card ul { padding-left: 1.2rem; }
+  .section-card li { margin-bottom: 0.3rem; }
+
+  .highlight-pill {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
   }
 
-  /* email row */
-  .email-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-    align-items: center;
+  /* ── REFLECTION AREA ── */
+  .reflection-area {
+    background: rgba(20,35,18,0.8);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1rem;
   }
-  .email-input {
-    flex: 1 1 200px;
-    border: 2px solid #d0e8cc;
+  .reflection-area h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .reflection-area label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .reflection-area textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.25);
     border-radius: 8px;
-    padding: 10px 14px;
-    font-family: 'Source Sans 3', sans-serif;
+    color: var(--white);
+    font-family: 'Lato', sans-serif;
     font-size: 0.9rem;
-    color: var(--text-dark);
-    background: #f7fdf6;
+    line-height: 1.6;
+    padding: 0.9rem 1rem;
+    resize: vertical;
+    min-height: 110px;
     transition: border-color 0.2s;
   }
-  .email-input:focus { outline: none; border-color: var(--forest); }
-  .email-hint {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.8rem;
-    color: #7a9e78;
-    margin-top: 5px;
+  .reflection-area textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .reflection-area textarea:focus {
+    outline: none;
+    border-color: var(--gold);
   }
-  .send-btn {
-    flex-shrink: 0;
-    background: var(--forest);
+
+  /* ── EMAIL ── */
+  .email-section {
+    background: rgba(54,82,51,0.3);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .email-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 0.75rem;
+  }
+  .email-toggle h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .toggle-arrow {
+    color: var(--gold);
+    font-size: 0.85rem;
+    transition: transform 0.3s;
+  }
+  .toggle-arrow.open { transform: rotate(180deg); }
+
+  .email-body { display: none; padding-top: 1rem; }
+  .email-body.open { display: block; }
+
+  .email-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  @media (max-width: 500px) { .email-row { grid-template-columns: 1fr; } }
+
+  .email-field label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+  .email-field input, .email-field select {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 7px;
     color: var(--white);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.88rem;
+    padding: 0.65rem 0.9rem;
+    transition: border-color 0.2s;
+  }
+  .email-field input::placeholder { color: rgba(255,255,255,0.3); }
+  .email-field input:focus, .email-field select:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .email-field select option { background: var(--forest-dark); color: var(--white); }
+
+  .send-btn {
+    background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%);
+    color: var(--forest-deep);
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 600;
-    font-size: 0.88rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
-    display: flex; align-items: center; gap: 6px;
-    transition: background 0.2s, transform 0.15s;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
   }
-  .send-btn:hover { background: var(--forest-mid); transform: translateY(-1px); }
+  .send-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  .send-btn:active { transform: translateY(0); }
 
-  /* application box */
-  .application-box {
-    background: linear-gradient(135deg, #f5faf4, #eef7ec);
-    border: 1.5px solid #b8ddb5;
+  .email-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--forest);
+    border: 1px solid var(--gold);
+    color: var(--white);
+    padding: 0.9rem 1.5rem;
     border-radius: 10px;
-    padding: 18px 20px;
-    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    z-index: 999;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap {
+    background: rgba(255,255,255,0.08);
+    border-radius: 99px;
+    height: 5px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+    border-radius: 99px;
+    transition: width 0.5s ease;
+  }
+  .progress-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: right;
+    margin-top: 0.25rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── DISCUSSION ── */
+  .discussion-block {
+    background: linear-gradient(135deg, rgba(54,82,51,0.5) 0%, rgba(26,42,24,0.5) 100%);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-top: 3px solid var(--gold);
+    border-radius: 0 0 12px 12px;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1rem;
+  }
+  .discussion-block h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--forest-dark);
-    margin-top: 6px;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
+  .discussion-block p { font-size: 0.9rem; color: var(--cream); line-height: 1.7; font-style: italic; }
 
-  /* discussion box */
-  .discussion-box {
-    background: linear-gradient(135deg, #f3f0fa, #ebe4f7);
-    border: 1.5px solid #c5b8e8;
-    border-radius: 10px;
-    padding: 18px 20px;
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #3d2d6b;
-    margin-top: 6px;
-  }
-
-  /* day nav */
-  .day-nav {
+  /* ── NAV BUTTONS ── */
+  .nav-btns {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 1rem;
+    margin-top: 1.5rem;
     flex-wrap: wrap;
   }
   .nav-btn {
-    flex: 1 1 120px;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.2);
-    border-radius: 10px;
-    color: rgba(255,255,255,0.85);
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 12px 18px;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .nav-btn:hover { background: rgba(255,255,255,0.15); border-color: var(--gold); color: var(--gold-light); }
-  .nav-btn.next { justify-content: flex-end; }
-  .nav-btn.prev { justify-content: flex-start; }
-
-  /* toast */
-  .toast {
-    position: fixed;
-    bottom: 28px; right: 24px;
-    background: var(--forest-dark);
-    color: var(--white);
-    border: 1px solid var(--gold);
-    border-radius: 10px;
-    padding: 14px 22px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.9rem;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
-    opacity: 0;
-    transform: translateY(10px);
-    pointer-events: none;
-    transition: opacity 0.3s, transform 0.3s;
-    z-index: 999;
-    max-width: 280px;
-  }
-  .toast.show { opacity: 1; transform: translateY(0); }
-
-  /* footer */
-  .footer {
-    background: var(--forest-dark);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-    padding: 28px 20px;
-  }
-  .footer a {
-    display: inline-block;
+    background: rgba(54,82,51,0.6);
+    border: 1px solid rgba(201,168,76,0.3);
     color: var(--gold-light);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.35);
-    padding: 11px 22px;
-    border-radius: 30px;
-    transition: background 0.2s;
-    margin-bottom: 14px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
-  .footer a:hover { background: rgba(201,168,76,0.22); }
-  .footer p {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.35);
-    margin-top: 8px;
-  }
+  .nav-btn:hover { background: var(--forest); border-color: var(--gold); color: var(--gold); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
-  /* progress dots */
-  .progress-dots {
-    display: flex; gap: 7px; justify-content: center;
-    margin-bottom: 22px;
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    letter-spacing: 0.04em;
   }
-  .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .dot.active { background: var(--gold); transform: scale(1.3); }
-
-  @media (max-width: 520px) {
-    .intro-body { padding: 22px 18px; }
-    .main { padding: 24px 12px 50px; }
-    .section-header { padding: 15px 16px; }
-    .section-body { padding: 0 16px 18px; }
-    .email-row { flex-direction: column; }
-    .send-btn { width: 100%; justify-content: center; }
-    .tab-btn { padding: 14px 15px 12px; font-size: 12px; }
-  }
+  footer span { color: var(--gold); }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">5-Day Devotional Series</div>
-  <h1>Living in <span>Community</span></h1>
-  <p>Based on the sermon by Pastor Bong Baylon &mdash; Real Life Christian Communities</p>
-  <div class="hero-divider"></div>
-</div>
+<header>
+  <div class="header-cross">✦ ✦ ✦</div>
+  <h1>Living with Impact</h1>
+  <p class="subtitle">A Five-Day Devotional · Acts 2:47b</p>
+  <div class="header-rule"></div>
+</header>
 
-<div class="tab-bar-wrap">
-  <div class="tab-bar" id="tabBar">
-    <button class="tab-btn active" data-tab="intro">📖 Intro</button>
-    <button class="tab-btn" data-tab="day1">Day 1</button>
-    <button class="tab-btn" data-tab="day2">Day 2</button>
-    <button class="tab-btn" data-tab="day3">Day 3</button>
-    <button class="tab-btn" data-tab="day4">Day 4</button>
-    <button class="tab-btn" data-tab="day5">Day 5</button>
+<!-- TAB NAV -->
+<div class="tab-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('intro', this)">
+      <span class="day-num">Guide</span>Welcome
+    </button>
+    <button class="tab-btn" onclick="showTab('day1', this)">
+      <span class="day-num">Day 1</span>God's Initiative
+    </button>
+    <button class="tab-btn" onclick="showTab('day2', this)">
+      <span class="day-num">Day 2</span>Co-Laborers
+    </button>
+    <button class="tab-btn" onclick="showTab('day3', this)">
+      <span class="day-num">Day 3</span>A Process
+    </button>
+    <button class="tab-btn" onclick="showTab('day4', this)">
+      <span class="day-num">Day 4</span>No Excuses
+    </button>
+    <button class="tab-btn" onclick="showTab('day5', this)">
+      <span class="day-num">Day 5</span>Impact
+    </button>
   </div>
 </div>
 
-<div class="main">
+<!-- PANELS -->
+<div class="panels">
 
-  <!-- INTRO PANEL -->
-  <div class="panel active" id="tab-intro">
-    <div class="intro-card">
-      <div class="intro-header">
-        <h2>Welcome to This Devotional Journey</h2>
-        <p>Five days of prayer, reflection, and community &mdash; drawn from the sermon <em>Living in Community</em>.</p>
+  <!-- ══ INTRO ══ -->
+  <div id="panel-intro" class="panel active">
+    <div class="intro-hero">
+      <div class="intro-icon">📖</div>
+      <h2>Welcome to Your Daily Devotional</h2>
+      <p>These five devotionals are drawn from the sermon <em>"Living with Impact"</em> based on Acts 2:47b. Each day is designed to guide you into a meaningful time of prayer, Scripture, and personal reflection.</p>
+    </div>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="gc-icon">🕐</div>
+        <h3>Set a Regular Time</h3>
+        <p>Choose a quiet moment each day — morning, midday, or evening — and protect it as your sacred space with God. Consistency builds depth.</p>
       </div>
-      <div class="intro-body">
-        <p>We were not made to walk with God alone. From the very beginning, God designed us for deep, authentic relationships &mdash; with Him and with one another. This five-day devotional invites you to slow down, listen, and respond to what God is saying to you about the community He has placed around you.</p>
-        <p>Whether you are doing this as part of your personal quiet time or alongside others in a small group, here is how to get the most out of each day:</p>
-
-        <ul class="intro-steps">
-          <li>
-            <div class="step-num">1</div>
-            <div class="step-text"><strong>Find a quiet place.</strong> Set aside 15–20 minutes when you will not be interrupted. Begin with a short prayer, asking the Holy Spirit to speak to you through the Word.</div>
-          </li>
-          <li>
-            <div class="step-num">2</div>
-            <div class="step-text"><strong>Read the Scripture slowly.</strong> Let the verse settle in your heart. Read it again if needed. Ask: <em>What is God saying in this passage?</em></div>
-          </li>
-          <li>
-            <div class="step-num">3</div>
-            <div class="step-text"><strong>Read the Explanation.</strong> This section unpacks the background and meaning of the passage to help deepen your understanding.</div>
-          </li>
-          <li>
-            <div class="step-num">4</div>
-            <div class="step-text"><strong>Sit with the Reflection question.</strong> Be honest with yourself and with God. This is not about the right answer &mdash; it is about an open heart.</div>
-          </li>
-          <li>
-            <div class="step-num">5</div>
-            <div class="step-text"><strong>Write your response in the journal below the question.</strong> Writing helps make your thoughts concrete. What did God speak to you today?</div>
-          </li>
-          <li>
-            <div class="step-num">6</div>
-            <div class="step-text"><strong>Read the Application.</strong> Identify one small, practical step you can take today or this week. Commit it to God in prayer.</div>
-          </li>
-          <li>
-            <div class="step-num">7</div>
-            <div class="step-text"><strong>Use the Discussion question</strong> if you are doing this with a group, a friend, or a spiritual director. It is also a great question to bring before God in prayer.</div>
-          </li>
-          <li>
-            <div class="step-num">8</div>
-            <div class="step-text"><strong>Email your reflection</strong> to yourself as a record of your journey, or share it with a trusted friend, mentor, or small group leader for accountability.</div>
-          </li>
-        </ul>
-
-        <div class="intro-note">
-          <p>💡 <strong>Tip:</strong> You do not have to rush through all five days at once. Let each day's truth take root before moving to the next. This is a journey, not a race. The Lord is patient, and He will meet you right where you are.</p>
-        </div>
-        <button class="start-btn" onclick="switchTab('day1')">Begin Day 1 →</button>
+      <div class="guide-card">
+        <div class="gc-icon">🙏</div>
+        <h3>Begin with Prayer</h3>
+        <p>Before reading, pause and invite the Holy Spirit to speak to you. Ask God to open your heart and mind to His word for you today.</p>
       </div>
+      <div class="guide-card">
+        <div class="gc-icon">📝</div>
+        <h3>Read Slowly & Reflect</h3>
+        <p>Read the Scripture and explanation slowly. Sit with the reflection question. Let it stir honest thoughts and responses in your heart.</p>
+      </div>
+      <div class="guide-card">
+        <div class="gc-icon">✉️</div>
+        <h3>Write & Share</h3>
+        <p>Use the reflection box to journal your thoughts. You can email them to yourself for your personal record, or share with someone for encouragement.</p>
+      </div>
+      <div class="guide-card">
+        <div class="gc-icon">🚶</div>
+        <h3>Act on It</h3>
+        <p>Each day includes a practical application. Faith without action is incomplete — choose one step and take it before your next devotion.</p>
+      </div>
+      <div class="guide-card">
+        <div class="gc-icon">💬</div>
+        <h3>Discuss with Others</h3>
+        <p>The discussion question is ideal for small groups, cell groups, or accountability partners. Iron sharpens iron — talk it through together.</p>
+      </div>
+    </div>
+
+    <blockquote class="intro-verse">
+      "And day by day, attending the temple together and breaking bread in their homes, they received their food with glad and generous hearts, praising God and having favor with all the people. And the Lord added to their number day by day those who were being saved."
+      <cite>— Acts 2:46–47 (ESV)</cite>
+    </blockquote>
+
+    <div class="nav-btns" style="margin-top:1.5rem; justify-content:flex-end;">
+      <button class="nav-btn" onclick="goToDay('day1')">Begin Day 1 →</button>
     </div>
   </div>
 
-  <!-- DAY 1 -->
-  <div class="panel" id="tab-day1">
-    <div class="progress-dots">
-      <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <!-- ══ DAY 1 ══ -->
+  <div id="panel-day1" class="panel">
+    <div class="day-header">
+      <span class="day-badge">Day 1 of 5</span>
+      <h2 class="day-title">God Takes the Initiative</h2>
     </div>
-    <div class="day-label">Day 1 of 5</div>
-    <div class="day-title">Created for Community</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width:20%"></div>
+    </div>
 
-    <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-scripture">📜</div><div class="section-label">Scripture</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="scripture-block">
-          <div class="scripture-text">"God sets the lonely in families…"</div>
-          <div class="scripture-ref">Psalm 68:6 (NIV)</div>
-        </div>
-      </div>
+    <div class="scripture-block">
+      <div class="scripture-label">📖 Scripture</div>
+      <div class="scripture-text">"…And the Lord added…"</div>
+      <div class="scripture-ref">— Acts 2:47a (NIV)</div>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-explanation">📚</div><div class="section-label">Explanation</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="body-text">
-          <p>Many people today feel lonely and disconnected, even in a world filled with social media and constant communication. We can be surrounded by people and still feel isolated inside.</p>
-          <p>But loneliness is not part of God's original design for humanity. From the beginning, God created people for relationships and community. In Acts 2, the early believers intentionally shared life together. They worshiped together, prayed together, ate together, and supported one another.</p>
-          <p>Biblical community is more than being present in the same place. It is about belonging to one another in Christ &mdash; learning to love, encourage, and care for one another as spiritual family. Sometimes people withdraw because of hurt, disappointment, fear, or busyness. Yet God often brings healing and growth through authentic relationships with others.</p>
-        </div>
-      </div>
+      <h3><span class="s-icon">💡</span> Explanation</h3>
+      <p>The growth of the early church was ultimately the work of God. Luke made it clear that the Lord was the One adding people to the church daily. The believers were faithful and obedient, but God Himself initiated the work.</p>
+      <br>
+      <p>This reminds believers today that ministry impact does not begin with human ability, strategy, or effort alone. Apart from God, true spiritual transformation cannot happen. Only God can change hearts, draw people to Himself, and bring lasting fruit.</p>
+      <br>
+      <p>That is why prayer and listening to God are so important. The church must continually depend on the guidance, wisdom, and power of the Holy Spirit rather than relying merely on programs or human strength. When believers follow God's leading, they begin participating in what He is already doing.</p>
+    </div>
+
+    <div class="reflection-area">
+      <h3><span>🪞</span> Reflection</h3>
+      <div class="highlight-pill">Reflect Honestly</div>
+      <p style="color:var(--cream); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">Is there too much dependence on personal ability and not enough dependence on God in ministry and daily life?</p>
+      <label for="r1">Your Thoughts</label>
+      <textarea id="r1" placeholder="Write your reflection here…"></textarea>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-reflection">💭</div><div class="section-label">Reflection &amp; Journal</div></div>
-        <span class="chevron">▾</span>
+      <h3><span class="s-icon">🚶</span> Application</h3>
+      <p>Spend intentional time in prayer today. Ask God to guide, empower, and direct every area of ministry, relationships, and spiritual service.</p>
+    </div>
+
+    <div class="discussion-block">
+      <h3>💬 Discussion Question</h3>
+      <p>Why is prayer essential in fulfilling the mission of making disciples?</p>
+    </div>
+
+    <!-- Email Section -->
+    <div class="email-section">
+      <div class="email-toggle" onclick="toggleEmail('email1', 'arrow1')">
+        <h4>✉️ Email My Reflection</h4>
+        <span class="toggle-arrow" id="arrow1">▾</span>
       </div>
-      <div class="section-body open">
-        <p class="reflection-prompt">Are there areas in your life where isolation has slowly become normal? What fears or experiences may be making it difficult to connect deeply with others?</p>
-        <textarea class="reflection-area" id="ref-day1" placeholder="Write your thoughts here… this is between you and God."></textarea>
+      <div class="email-body" id="email1">
         <div class="email-row">
-          <input class="email-input" type="email" id="email-day1" placeholder="Email address (yours or someone else's)" />
-          <button class="send-btn" onclick="sendReflection(1)">✉ Send Reflection</button>
+          <div class="email-field">
+            <label>Recipient Name</label>
+            <input type="text" id="e1-name" placeholder="e.g. Myself or Friend's Name">
+          </div>
+          <div class="email-field">
+            <label>Email Address</label>
+            <input type="email" id="e1-email" placeholder="email@example.com">
+          </div>
         </div>
-        <p class="email-hint">Your journal entry will open in your email app so you can send or save it.</p>
+        <div class="email-field" style="margin-bottom:0.75rem;">
+          <label>Send To</label>
+          <select id="e1-type">
+            <option value="self">Myself (personal journal)</option>
+            <option value="other">Someone else (accountability / encouragement)</option>
+          </select>
+        </div>
+        <button class="send-btn" onclick="sendEmail(1)">✉️ Send Reflection</button>
+        <p class="email-note">This will open your default email app pre-filled with your reflection and Day 1 details.</p>
       </div>
     </div>
 
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-application">🌱</div><div class="section-label">Application</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="application-box">Take one intentional step toward deeper community this week. Reach out to someone, reconnect with a friend, or participate more actively in a small group or ministry community.</div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-discussion">💬</div><div class="section-label">Discussion Question</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="discussion-box">Why do many people still struggle with loneliness even though communication today is easier than ever?</div>
-      </div>
-    </div>
-
-    <div class="day-nav">
-      <span></span>
-      <button class="nav-btn next" onclick="switchTab('day2')">Day 2 →</button>
+    <div class="nav-btns">
+      <button class="nav-btn" disabled>← Previous</button>
+      <button class="nav-btn" onclick="goToDay('day2')">Next Day →</button>
     </div>
   </div>
 
-  <!-- DAY 2 -->
-  <div class="panel" id="tab-day2">
-    <div class="progress-dots">
-      <div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <!-- ══ DAY 2 ══ -->
+  <div id="panel-day2" class="panel">
+    <div class="day-header">
+      <span class="day-badge">Day 2 of 5</span>
+      <h2 class="day-title">Co-Laborers with God</h2>
     </div>
-    <div class="day-label">Day 2 of 5</div>
-    <div class="day-title">More Than Attendance</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width:40%"></div>
+    </div>
 
-    <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-scripture">📜</div><div class="section-label">Scripture</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="scripture-block">
-          <div class="scripture-text">"Every day they continued to meet together in the temple courts…"</div>
-          <div class="scripture-ref">Acts 2:46a (NIV)</div>
-        </div>
-      </div>
+    <div class="scripture-block">
+      <div class="scripture-label">📖 Scripture</div>
+      <div class="scripture-text">"…to their number daily…"</div>
+      <div class="scripture-ref">— Acts 2:47a (NIV)</div>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-explanation">📚</div><div class="section-label">Explanation</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="body-text">
-          <p>The early church did not limit their relationships to weekly worship gatherings. Their faith was woven into everyday life. They intentionally stayed connected with one another both publicly and privately.</p>
-          <p>Today, it is possible to attend church regularly while remaining disconnected from people relationally. A person can participate in worship services yet still avoid meaningful fellowship. Technology can help people communicate, but it cannot replace genuine spiritual community.</p>
-          <p>Real relationships require time, presence, honesty, and shared experiences. The church was never meant to be only a gathering to attend. It was meant to be a spiritual family where believers grow together in faith and love.</p>
-        </div>
-      </div>
+      <h3><span class="s-icon">💡</span> Explanation</h3>
+      <p>Although God was the One bringing growth, the early believers still had an important role to play. They proclaimed the gospel, discipled new believers, formed communities of faith, and raised up leaders. The church was not passive. The believers actively participated in God's mission.</p>
+      <br>
+      <p>This same principle remains true today. God invites His people to become co-laborers with Him. Every believer has a role in the Great Commission. Some encourage others, some teach, some lead communities, some share the gospel, and some help disciple new believers.</p>
+      <br>
+      <p>Healthy churches do not depend only on pastors or staff. They intentionally develop lay leaders and workers who can continue the ministry and help others grow spiritually. God leads, but His people must respond with obedience and participation.</p>
+    </div>
+
+    <div class="reflection-area">
+      <h3><span>🪞</span> Reflection</h3>
+      <div class="highlight-pill">Reflect Honestly</div>
+      <p style="color:var(--cream); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">How actively involved is there participation in God's mission and the work of discipling others?</p>
+      <label for="r2">Your Thoughts</label>
+      <textarea id="r2" placeholder="Write your reflection here…"></textarea>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-reflection">💭</div><div class="section-label">Reflection &amp; Journal</div></div>
-        <span class="chevron">▾</span>
+      <h3><span class="s-icon">🚶</span> Application</h3>
+      <p>Identify one practical way to serve more intentionally within the church or community this week. Look for opportunities to encourage, lead, disciple, or support others spiritually.</p>
+    </div>
+
+    <div class="discussion-block">
+      <h3>💬 Discussion Question</h3>
+      <p>Why is it important for every believer — not just pastors or leaders — to participate in ministry?</p>
+    </div>
+
+    <div class="email-section">
+      <div class="email-toggle" onclick="toggleEmail('email2', 'arrow2')">
+        <h4>✉️ Email My Reflection</h4>
+        <span class="toggle-arrow" id="arrow2">▾</span>
       </div>
-      <div class="section-body open">
-        <p class="reflection-prompt">Has church become mainly an event to attend rather than a community to belong to? What would it look like to be more fully present and connected?</p>
-        <textarea class="reflection-area" id="ref-day2" placeholder="Write your thoughts here… this is between you and God."></textarea>
+      <div class="email-body" id="email2">
         <div class="email-row">
-          <input class="email-input" type="email" id="email-day2" placeholder="Email address (yours or someone else's)" />
-          <button class="send-btn" onclick="sendReflection(2)">✉ Send Reflection</button>
+          <div class="email-field">
+            <label>Recipient Name</label>
+            <input type="text" id="e2-name" placeholder="e.g. Myself or Friend's Name">
+          </div>
+          <div class="email-field">
+            <label>Email Address</label>
+            <input type="email" id="e2-email" placeholder="email@example.com">
+          </div>
         </div>
-        <p class="email-hint">Your journal entry will open in your email app so you can send or save it.</p>
+        <div class="email-field" style="margin-bottom:0.75rem;">
+          <label>Send To</label>
+          <select id="e2-type">
+            <option value="self">Myself (personal journal)</option>
+            <option value="other">Someone else (accountability / encouragement)</option>
+          </select>
+        </div>
+        <button class="send-btn" onclick="sendEmail(2)">✉️ Send Reflection</button>
+        <p class="email-note">This will open your default email app pre-filled with your reflection and Day 2 details.</p>
       </div>
     </div>
 
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-application">🌱</div><div class="section-label">Application</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="application-box">Make time this week to engage more intentionally with others in church or in a small group. Stay after the service, start a conversation, or invite someone to connect outside of Sunday worship.</div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-discussion">💬</div><div class="section-label">Discussion Question</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="discussion-box">What usually prevents people from developing deeper relationships within the church?</div>
-      </div>
-    </div>
-
-    <div class="day-nav">
-      <button class="nav-btn prev" onclick="switchTab('day1')">← Day 1</button>
-      <button class="nav-btn next" onclick="switchTab('day3')">Day 3 →</button>
+    <div class="nav-btns">
+      <button class="nav-btn" onclick="goToDay('day1')">← Previous</button>
+      <button class="nav-btn" onclick="goToDay('day3')">Next Day →</button>
     </div>
   </div>
 
-  <!-- DAY 3 -->
-  <div class="panel" id="tab-day3">
-    <div class="progress-dots">
-      <div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+  <!-- ══ DAY 3 ══ -->
+  <div id="panel-day3" class="panel">
+    <div class="day-header">
+      <span class="day-badge">Day 3 of 5</span>
+      <h2 class="day-title">Salvation Is a Process</h2>
     </div>
-    <div class="day-label">Day 3 of 5</div>
-    <div class="day-title">Eat, Share, and Pray</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width:60%"></div>
+    </div>
 
-    <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-scripture">📜</div><div class="section-label">Scripture</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="scripture-block">
-          <div class="scripture-text">"They broke bread in their homes and ate together with glad and sincere hearts."</div>
-          <div class="scripture-ref">Acts 2:46b (NIV)</div>
-        </div>
-      </div>
+    <div class="scripture-block">
+      <div class="scripture-label">📖 Scripture</div>
+      <div class="scripture-text">"…those who were being saved."</div>
+      <div class="scripture-ref">— Acts 2:47a (NIV)</div>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-explanation">📚</div><div class="section-label">Explanation</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="body-text">
-          <p>In the early church, sharing meals was not simply about food. Eating together represented acceptance, fellowship, and belonging. Around the table, relationships became deeper and more authentic.</p>
-          <p>That is why simple practices like eating together, sharing life, and praying together remain powerful today. Genuine community is often built through ordinary moments consistently shared with others.</p>
-          <p>Authentic relationships require more than occasional meetings. They require time, vulnerability, commitment, and love. People long for places where they can be honest without fear of judgment. Christian community becomes meaningful when believers are willing to be sincere with one another and walk together through both joys and struggles.</p>
-        </div>
-      </div>
+      <h3><span class="s-icon">💡</span> Explanation</h3>
+      <p>Luke described people as "being saved," which reminds believers that salvation is often a process rather than a single moment. Many people come to faith through ongoing conversations, questions, experiences, and spiritual encounters.</p>
+      <br>
+      <p>Evangelism is not merely about delivering information quickly. It involves patiently walking with people as God works in their hearts. Sometimes believers become discouraged when they do not immediately see visible results. But spiritual transformation often takes time. Seeds are planted gradually. Faith grows through relationships, conversations, prayer, and continued exposure to the gospel.</p>
+      <br>
+      <p>God calls His people not only to proclaim the truth but also to patiently journey with others toward Christ.</p>
+    </div>
+
+    <div class="reflection-area">
+      <h3><span>🪞</span> Reflection</h3>
+      <div class="highlight-pill">Reflect Honestly</div>
+      <p style="color:var(--cream); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">Is there enough patience and compassion toward people who are still exploring faith or struggling spiritually?</p>
+      <label for="r3">Your Thoughts</label>
+      <textarea id="r3" placeholder="Write your reflection here…"></textarea>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-reflection">💭</div><div class="section-label">Reflection &amp; Journal</div></div>
-        <span class="chevron">▾</span>
+      <h3><span class="s-icon">🚶</span> Application</h3>
+      <p>Pray for someone who is still seeking or growing spiritually. Continue building relationships and creating opportunities for meaningful conversations about faith.</p>
+    </div>
+
+    <div class="discussion-block">
+      <h3>💬 Discussion Question</h3>
+      <p>Why is it important to view evangelism and discipleship as a process rather than merely a one-time event?</p>
+    </div>
+
+    <div class="email-section">
+      <div class="email-toggle" onclick="toggleEmail('email3', 'arrow3')">
+        <h4>✉️ Email My Reflection</h4>
+        <span class="toggle-arrow" id="arrow3">▾</span>
       </div>
-      <div class="section-body open">
-        <p class="reflection-prompt">How comfortable is it for you to be honest and authentic with others about personal struggles, fears, or needs? What holds you back?</p>
-        <textarea class="reflection-area" id="ref-day3" placeholder="Write your thoughts here… this is between you and God."></textarea>
+      <div class="email-body" id="email3">
         <div class="email-row">
-          <input class="email-input" type="email" id="email-day3" placeholder="Email address (yours or someone else's)" />
-          <button class="send-btn" onclick="sendReflection(3)">✉ Send Reflection</button>
+          <div class="email-field">
+            <label>Recipient Name</label>
+            <input type="text" id="e3-name" placeholder="e.g. Myself or Friend's Name">
+          </div>
+          <div class="email-field">
+            <label>Email Address</label>
+            <input type="email" id="e3-email" placeholder="email@example.com">
+          </div>
         </div>
-        <p class="email-hint">Your journal entry will open in your email app so you can send or save it.</p>
+        <div class="email-field" style="margin-bottom:0.75rem;">
+          <label>Send To</label>
+          <select id="e3-type">
+            <option value="self">Myself (personal journal)</option>
+            <option value="other">Someone else (accountability / encouragement)</option>
+          </select>
+        </div>
+        <button class="send-btn" onclick="sendEmail(3)">✉️ Send Reflection</button>
+        <p class="email-note">This will open your default email app pre-filled with your reflection and Day 3 details.</p>
       </div>
     </div>
 
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-application">🌱</div><div class="section-label">Application</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="application-box">Invite someone to share a meal or conversation this week. Take time to listen carefully, encourage sincerely, and pray together intentionally.</div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-discussion">💬</div><div class="section-label">Discussion Question</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="discussion-box">Why is vulnerability important in developing authentic Christian relationships?</div>
-      </div>
-    </div>
-
-    <div class="day-nav">
-      <button class="nav-btn prev" onclick="switchTab('day2')">← Day 2</button>
-      <button class="nav-btn next" onclick="switchTab('day4')">Day 4 →</button>
+    <div class="nav-btns">
+      <button class="nav-btn" onclick="goToDay('day2')">← Previous</button>
+      <button class="nav-btn" onclick="goToDay('day4')">Next Day →</button>
     </div>
   </div>
 
-  <!-- DAY 4 -->
-  <div class="panel" id="tab-day4">
-    <div class="progress-dots">
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+  <!-- ══ DAY 4 ══ -->
+  <div id="panel-day4" class="panel">
+    <div class="day-header">
+      <span class="day-badge">Day 4 of 5</span>
+      <h2 class="day-title">Stop Making Excuses</h2>
     </div>
-    <div class="day-label">Day 4 of 5</div>
-    <div class="day-title">Focused on God and Others</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width:80%"></div>
+    </div>
 
-    <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-scripture">📜</div><div class="section-label">Scripture</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="scripture-block">
-          <div class="scripture-text">"…praising God and enjoying the favor of all the people."</div>
-          <div class="scripture-ref">Acts 2:47a (NIV)</div>
-        </div>
-      </div>
+    <div class="scripture-block">
+      <div class="scripture-label">📖 Scripture</div>
+      <div class="scripture-text">"For nothing will be impossible with God."</div>
+      <div class="scripture-ref">— Luke 1:37 (ESV)</div>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-explanation">📚</div><div class="section-label">Explanation</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="body-text">
-          <p>The early church was deeply connected relationally, but they were not inward-looking. Their focus remained on God and His mission. They worshiped sincerely, and they cared deeply about reaching people with the message of Christ.</p>
-          <p>Their community life was not centered on comfort or convenience but on the kingdom of God. Churches today can sometimes become too focused on preserving comfort, routines, or traditions. Yet Jesus called His followers to live missionally and to serve others beyond the walls of the church.</p>
-          <p>A ship may be safest in the harbor, but it was not built to stay there. Healthy Christian communities continue looking outward. They seek opportunities to love people, serve others, and share the gospel faithfully.</p>
-        </div>
-      </div>
+      <h3><span class="s-icon">💡</span> Explanation</h3>
+      <p>The early church faced persecution, opposition, and many challenges, yet they continued growing and making disciples. Nothing could stop the work of God.</p>
+      <br>
+      <p>Today, it is easy to make excuses about why ministry is difficult or why reaching people seems impossible. Fear, busyness, limitations, or changing culture can sometimes discourage believers from participating in God's mission. But the resurrection of Jesus changes everything.</p>
+      <br>
+      <p>Because Jesus is alive, believers can continue serving, reaching people, building communities, and raising up disciples despite difficulties and obstacles. God's power is greater than human limitations. Faith means trusting that God can continue working even when circumstances appear difficult.</p>
+    </div>
+
+    <div class="reflection-area">
+      <h3><span>🪞</span> Reflection</h3>
+      <div class="highlight-pill">Reflect Honestly</div>
+      <p style="color:var(--cream); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">What fears, excuses, or limitations may be preventing greater faith and obedience?</p>
+      <label for="r4">Your Thoughts</label>
+      <textarea id="r4" placeholder="Write your reflection here…"></textarea>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-reflection">💭</div><div class="section-label">Reflection &amp; Journal</div></div>
-        <span class="chevron">▾</span>
+      <h3><span class="s-icon">🚶</span> Application</h3>
+      <p>Surrender one area of fear or hesitation to God today. Ask Him for courage to trust His power more than personal limitations.</p>
+    </div>
+
+    <div class="discussion-block">
+      <h3>💬 Discussion Question</h3>
+      <p>What are some common excuses people make when it comes to sharing the gospel or serving in ministry?</p>
+    </div>
+
+    <div class="email-section">
+      <div class="email-toggle" onclick="toggleEmail('email4', 'arrow4')">
+        <h4>✉️ Email My Reflection</h4>
+        <span class="toggle-arrow" id="arrow4">▾</span>
       </div>
-      <div class="section-body open">
-        <p class="reflection-prompt">Has your spiritual life become too inward-focused or comfort-centered? Where might God be calling you to look outward in love and service?</p>
-        <textarea class="reflection-area" id="ref-day4" placeholder="Write your thoughts here… this is between you and God."></textarea>
+      <div class="email-body" id="email4">
         <div class="email-row">
-          <input class="email-input" type="email" id="email-day4" placeholder="Email address (yours or someone else's)" />
-          <button class="send-btn" onclick="sendReflection(4)">✉ Send Reflection</button>
+          <div class="email-field">
+            <label>Recipient Name</label>
+            <input type="text" id="e4-name" placeholder="e.g. Myself or Friend's Name">
+          </div>
+          <div class="email-field">
+            <label>Email Address</label>
+            <input type="email" id="e4-email" placeholder="email@example.com">
+          </div>
         </div>
-        <p class="email-hint">Your journal entry will open in your email app so you can send or save it.</p>
+        <div class="email-field" style="margin-bottom:0.75rem;">
+          <label>Send To</label>
+          <select id="e4-type">
+            <option value="self">Myself (personal journal)</option>
+            <option value="other">Someone else (accountability / encouragement)</option>
+          </select>
+        </div>
+        <button class="send-btn" onclick="sendEmail(4)">✉️ Send Reflection</button>
+        <p class="email-note">This will open your default email app pre-filled with your reflection and Day 4 details.</p>
       </div>
     </div>
 
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-application">🌱</div><div class="section-label">Application</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="application-box">Pray for opportunities to encourage, serve, or reach someone this week. Ask God to help develop a heart that cares deeply about others and about His mission.</div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-discussion">💬</div><div class="section-label">Discussion Question</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="discussion-box">Why is it dangerous for churches or believers to become inward-looking?</div>
-      </div>
-    </div>
-
-    <div class="day-nav">
-      <button class="nav-btn prev" onclick="switchTab('day3')">← Day 3</button>
-      <button class="nav-btn next" onclick="switchTab('day5')">Day 5 →</button>
+    <div class="nav-btns">
+      <button class="nav-btn" onclick="goToDay('day3')">← Previous</button>
+      <button class="nav-btn" onclick="goToDay('day5')">Next Day →</button>
     </div>
   </div>
 
-  <!-- DAY 5 -->
-  <div class="panel" id="tab-day5">
-    <div class="progress-dots">
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+  <!-- ══ DAY 5 ══ -->
+  <div id="panel-day5" class="panel">
+    <div class="day-header">
+      <span class="day-badge">Day 5 of 5</span>
+      <h2 class="day-title">Living with Impact</h2>
     </div>
-    <div class="day-label">Day 5 of 5</div>
-    <div class="day-title">Becoming the Church</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width:100%"></div>
+    </div>
 
-    <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-scripture">📜</div><div class="section-label">Scripture</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="scripture-block">
-          <div class="scripture-text">"Let us consider how we may spur one another on toward love and good deeds, not giving up meeting together…"</div>
-          <div class="scripture-ref">Hebrews 10:24–25a (NIV)</div>
-        </div>
-      </div>
+    <div class="scripture-block">
+      <div class="scripture-label">📖 Scripture</div>
+      <div class="scripture-text">"In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven."</div>
+      <div class="scripture-ref">— Matthew 5:16 (NIV)</div>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-explanation">📚</div><div class="section-label">Explanation</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body open">
-        <div class="body-text">
-          <p>Christian community is not optional for believers. God calls His people to walk together, encourage one another, and grow together spiritually. The early church understood this well &mdash; their relationships were marked by consistency, sincerity, worship, and shared purpose.</p>
-          <p>Today, many people approach church mainly as a place to attend once a week. But the church is not merely a building or a program. The church is a community of people following Jesus together.</p>
-          <p>Because Jesus lives, believers can experience genuine fellowship, encouragement, healing, and spiritual growth through relationships with one another. The call is not simply to go to church but to <em>become</em> the church through authentic, Christ-centered community.</p>
-        </div>
-      </div>
+      <h3><span class="s-icon">💡</span> Explanation</h3>
+      <p>The book of Acts reminds believers that the gospel continues to transform lives through the power of the risen Christ. The early church was impactful because God was at work among them, they cooperated with His mission, and they persevered in discipling people patiently.</p>
+      <br>
+      <p>Impact does not always happen through dramatic moments. Often it grows through faithful conversations, daily obedience, prayer, encouragement, and discipleship over time.</p>
+      <br>
+      <p>God calls every believer to participate in His mission of breaking barriers, connecting people, and honoring Christ. No act of faithfulness is wasted in the kingdom of God. Because Jesus is alive, believers can continue living boldly, serving faithfully, and making disciples with hope and confidence.</p>
+    </div>
+
+    <div class="reflection-area">
+      <h3><span>🪞</span> Reflection</h3>
+      <div class="highlight-pill">Reflect Honestly</div>
+      <p style="color:var(--cream); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">What kind of spiritual impact is daily life making on the people around us?</p>
+      <label for="r5">Your Thoughts</label>
+      <textarea id="r5" placeholder="Write your reflection here…"></textarea>
     </div>
 
     <div class="section-card">
-      <div class="section-header open" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-reflection">💭</div><div class="section-label">Reflection &amp; Journal</div></div>
-        <span class="chevron">▾</span>
+      <h3><span class="s-icon">🚶</span> Application</h3>
+      <p>Take one intentional step this week toward living with greater spiritual impact. Encourage someone, share the gospel, disciple another person, or help strengthen a community of faith.</p>
+    </div>
+
+    <div class="discussion-block">
+      <h3>💬 Discussion Question</h3>
+      <p>What practical steps can help believers live more intentionally for God's kingdom and mission?</p>
+    </div>
+
+    <div class="email-section">
+      <div class="email-toggle" onclick="toggleEmail('email5', 'arrow5')">
+        <h4>✉️ Email My Reflection</h4>
+        <span class="toggle-arrow" id="arrow5">▾</span>
       </div>
-      <div class="section-body open">
-        <p class="reflection-prompt">What kind of contribution are you making to the spiritual community God has placed around you? What is one thing you could do differently to help your community flourish?</p>
-        <textarea class="reflection-area" id="ref-day5" placeholder="Write your thoughts here… this is between you and God."></textarea>
+      <div class="email-body" id="email5">
         <div class="email-row">
-          <input class="email-input" type="email" id="email-day5" placeholder="Email address (yours or someone else's)" />
-          <button class="send-btn" onclick="sendReflection(5)">✉ Send Reflection</button>
+          <div class="email-field">
+            <label>Recipient Name</label>
+            <input type="text" id="e5-name" placeholder="e.g. Myself or Friend's Name">
+          </div>
+          <div class="email-field">
+            <label>Email Address</label>
+            <input type="email" id="e5-email" placeholder="email@example.com">
+          </div>
         </div>
-        <p class="email-hint">Your journal entry will open in your email app so you can send or save it.</p>
+        <div class="email-field" style="margin-bottom:0.75rem;">
+          <label>Send To</label>
+          <select id="e5-type">
+            <option value="self">Myself (personal journal)</option>
+            <option value="other">Someone else (accountability / encouragement)</option>
+          </select>
+        </div>
+        <button class="send-btn" onclick="sendEmail(5)">✉️ Send Reflection</button>
+        <p class="email-note">This will open your default email app pre-filled with your reflection and Day 5 details.</p>
       </div>
     </div>
 
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-application">🌱</div><div class="section-label">Application</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="application-box">Take one practical step this week toward building stronger relationships within the church community. Start small. Invite others to gather, share life, pray together, and encourage one another consistently.</div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-left"><div class="section-icon icon-discussion">💬</div><div class="section-label">Discussion Question</div></div>
-        <span class="chevron">▾</span>
-      </div>
-      <div class="section-body">
-        <div class="discussion-box">What practical habits can help believers build stronger and more authentic Christian community?</div>
-      </div>
-    </div>
-
-    <div class="day-nav">
-      <button class="nav-btn prev" onclick="switchTab('day4')">← Day 4</button>
-      <span></span>
+    <div class="nav-btns">
+      <button class="nav-btn" onclick="goToDay('day4')">← Previous</button>
+      <button class="nav-btn" style="background: linear-gradient(135deg, var(--gold) 0%, #8a6020 100%); color: var(--forest-deep); border-color:transparent;" onclick="goToDay('intro')">🏠 Back to Welcome</button>
     </div>
   </div>
+</div><!-- /panels -->
 
-</div><!-- /main -->
-
-<div class="footer">
-  <a href="https://rlccphil.churchcenter.com/home" target="_blank">🎧 Listen to Our Daily Devotions</a>
-  <p>Real Life Christian Communities &bull; Pacita Complex, San Pedro, Laguna &bull; rlcc.ph</p>
-</div>
+<footer>
+  <span>Living with Impact</span> · Five-Day Devotional · Acts 2:47b<br>
+  Based on the sermon series — for personal quiet time, small groups, and family devotions.
+</footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
-  function switchTab(tabId) {
-    document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    var panel = document.getElementById('tab-' + tabId);
-    var btn = document.querySelector('[data-tab="' + tabId + '"]');
-    if (panel) panel.classList.add('active');
-    if (btn) {
-      btn.classList.add('active');
-      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
+  const dayTitles = {
+    1: "God Takes the Initiative",
+    2: "Co-Laborers with God",
+    3: "Salvation Is a Process",
+    4: "Stop Making Excuses",
+    5: "Living with Impact"
+  };
+  const scriptures = {
+    1: '"…And the Lord added…" — Acts 2:47a (NIV)',
+    2: '"…to their number daily…" — Acts 2:47a (NIV)',
+    3: '"…those who were being saved." — Acts 2:47a (NIV)',
+    4: '"For nothing will be impossible with God." — Luke 1:37 (ESV)',
+    5: '"In the same way, let your light shine before others…" — Matthew 5:16 (NIV)'
+  };
+
+  function showTab(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    if (btn) btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      switchTab(this.getAttribute('data-tab'));
-    });
-  });
-
-  function toggleSection(header) {
-    var body = header.nextElementSibling;
-    var isOpen = body.classList.contains('open');
-    body.classList.toggle('open', !isOpen);
-    header.classList.toggle('open', !isOpen);
+  function goToDay(id) {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const map = { intro: 0, day1: 1, day2: 2, day3: 3, day4: 4, day5: 5 };
+    tabs.forEach(b => b.classList.remove('active'));
+    tabs[map[id]].classList.add('active');
+    showTab(id, null);
+    tabs[map[id]].classList.add('active');
   }
 
-  var dayTitles = ['', 'Created for Community', 'More Than Attendance', 'Eat, Share, and Pray', 'Focused on God and Others', 'Becoming the Church'];
+  function toggleEmail(bodyId, arrowId) {
+    const body = document.getElementById(bodyId);
+    const arrow = document.getElementById(arrowId);
+    body.classList.toggle('open');
+    arrow.classList.toggle('open');
+  }
 
-  function sendReflection(day) {
-    var text = document.getElementById('ref-day' + day).value.trim();
-    var email = document.getElementById('email-day' + day).value.trim();
-    if (!text) { showToast('Please write something in your journal first.'); return; }
-    if (!email) { showToast('Please enter an email address.'); return; }
-    var subject = 'My Reflection — Day ' + day + ': ' + dayTitles[day] + ' (Living in Community)';
-    var body = 'Living in Community — 5-Day Devotional\nDay ' + day + ': ' + dayTitles[day] + '\n\n--- My Reflection ---\n\n' + text + '\n\n---\nReal Life Christian Communities | rlcc.ph';
-    var mailto = 'mailto:' + encodeURIComponent(email) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    window.location.href = mailto;
-    showToast('Opening your email app…');
+  function sendEmail(day) {
+    const emailEl = document.getElementById('e' + day + '-email');
+    const nameEl  = document.getElementById('e' + day + '-name');
+    const typeEl  = document.getElementById('e' + day + '-type');
+    const refText = document.getElementById('r' + day).value.trim();
+
+    const email = emailEl.value.trim();
+    const name  = nameEl.value.trim() || 'Friend';
+    const isSelf = typeEl.value === 'self';
+
+    if (!email) {
+      showToast('⚠️ Please enter an email address.');
+      emailEl.focus();
+      return;
+    }
+    if (!refText) {
+      showToast('✏️ Please write your reflection first.');
+      return;
+    }
+
+    const title = dayTitles[day];
+    const verse = scriptures[day];
+    const greeting = isSelf ? 'Hi,\n\nHere is my reflection from my quiet time today:' :
+      `Hi ${name},\n\nI wanted to share my reflection from today's devotional with you:`;
+    const subject = encodeURIComponent(`[Living with Impact] Day ${day}: ${title}`);
+    const body = encodeURIComponent(
+`${greeting}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LIVING WITH IMPACT — Day ${day} of 5
+${title}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Scripture: ${verse}
+
+My Reflection:
+${refText}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Based on the sermon "Living with Impact" (Acts 2:47b)
+`
+    );
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    showToast('✅ Email app opened!');
   }
 
   function showToast(msg) {
-    var t = document.getElementById('toast');
+    const t = document.getElementById('toast');
     t.textContent = msg;
     t.classList.add('show');
-    setTimeout(function() { t.classList.remove('show'); }, 3200);
+    setTimeout(() => t.classList.remove('show'), 3000);
   }
 </script>
 </body>
